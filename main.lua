@@ -292,6 +292,7 @@ end
 
 function love.update(dt)
 	if is_game_over() then
+		-- TODO: add option to restart
 		return
 	end
 
@@ -312,5 +313,6 @@ function love.draw()
 end
 
 function love.resize(width, height)
+	-- TODO: add option to completely redraw
 	resize_vars(width, height)
 end
