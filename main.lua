@@ -24,6 +24,8 @@ local player_left_score = 0
 local player_right_score = 0
 local player_turn
 
+-- TODO: add teal
+
 local function handle_input(dt)
 	-- TODO: add support for joysticks (gamepads)
 	-- TODO: don't move if paddle would pinch the ball
@@ -190,6 +192,7 @@ local function resize_vars(width, height)
 	ball_size = height / 40
 
 	-- FIXME: this is off
+	-- ratio should be taken from current position / value -> new_value * ratio
 	if paddle_left_y ~= nil then
 		local width_ratio = screen_width / width
 		local height_ratio = screen_height / height
@@ -312,6 +315,7 @@ function love.draw()
 	end
 end
 
+-- TODO: resize should only be allowed in 'paused' game state
 function love.resize(width, height)
 	-- TODO: add option to completely redraw
 	resize_vars(width, height)
